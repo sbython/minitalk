@@ -6,7 +6,7 @@
 /*   By: msbai <msbai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:34:55 by msbai             #+#    #+#             */
-/*   Updated: 2024/01/27 15:33:02 by msbai            ###   ########.fr       */
+/*   Updated: 2024/01/29 19:58:21 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 #include <unistd.h>
 #include "ft_printf/ft_printf.h"
 #include "libft/libft.h"
+int ft_ifnmb(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if(!ft_isdigit(str[i]))
+			return(0);
+		i++;
+	}
+	return (1);
+}
 void get_bet(int pid , char ch)
 {
 	int		shift;
@@ -54,11 +67,13 @@ int	main(int argc, char **argv)
 
 	if (argc == 3)
 	{
+		if(!ft_ifnmb(argv[1]))
+			return(ft_printf("mnitak mdakhal 7arf wast pid") ,0);
 		pid = ft_atoi(argv[1]);
 		str = argv[2];
 		send_bit(pid, str);
 		
 	}
 	else
-		ft_printf("\n we need only 3 argument\n\n");
+		ft_printf("we need only 3 argument\n");
 }
