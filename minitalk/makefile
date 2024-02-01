@@ -6,7 +6,7 @@
 #    By: msbai <msbai@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 17:34:46 by msbai             #+#    #+#              #
-#    Updated: 2024/01/27 14:12:11 by msbai            ###   ########.fr        #
+#    Updated: 2024/01/29 22:33:17 by msbai            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ AFILE = libft/libft.a ft_printf/libftprintf.a
 NAME = server client
 CFILE = server.c client.c
 
-NAMEB = server_bouns client_bouns
-CFILEB = server_bouns.c client_bouns.c
+NAMEB = server_bonus client_bonus
+CFILEB = server_bonus.c client_bonus.c
 
 all:$(NAME)
 
@@ -40,8 +40,8 @@ fclean: clean
 
 re: fclean all
 
-bouns:$(NAMEB)
+bonus:$(NAMEB)
 
 $(NAMEB): $(CFILEB) $(AFILE)
-	$(CC) $(CFLAGS) server_bouns.c $(AFILE) -o server_bouns
-	$(CC) $(CFLAGS) client_bouns.c $(AFILE) -o client_bouns
+	$(CC) $(CFLAGS) server_bonus.c $(AFILE) -o server_bonus
+	$(CC) $(CFLAGS) client_bonus.c $(AFILE) -o client_bonus
